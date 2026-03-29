@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(deerback.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 3rem;
+}
+
+.logo {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.navbar-container .navbar-menue {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.navbar-container .navbar-menue li a {
+    text-decoration: none;
+
+    color: #fff;
+    padding: 3px 20px;
+    white-space: nowrap;
+    transition: all 0.3s ease; 
+}
+
+.navbar-container .navbar-menue li a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.navbar-toggle {
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all 0.3s ease-in-out; 
+}
+
+@media (max-width: 880px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .navbar-container .navbar-menue { 
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-container .navbar-menue.active{
+        display: flex;
+
+    }
+    .navbar-toggle{
+        display: block;
+        z-index: 100;
+    }
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;;
+    }
+    .navbar-toggle.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        
+    }
+    .navbar-toggle.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+        
+    }
+
+    
+}
