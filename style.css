@@ -78,7 +78,7 @@ body {
 
 @media (max-width: 880px) {
     .navbar {
-        backdrop-filter: none;
+        backdrop-filter: none; 
     }
 
     .navbar-container .navbar-menue { 
